@@ -5120,7 +5120,7 @@ window.Quarto = {
 <p>As you can see, the first condition is FALSE. In other words, for R, 1/3 is not equal to 0.333333333333. However, add one digit and R evaluates the second condition as TRUE. The same issue can occur if you check the results of two different calculations are equal. If you use a condition such as <code>res_cal_1 == res_calc_2</code>, the outcome could be FALSE due to the limited precision of numeric variables. Likewise, the results of some calculations will show “weird” results. For instance, we know that <span class="math display">\[(\sqrt{10})^2 = 10\]</span></p>
 <p>If you test this condition in R:</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb218"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb218-1"><a href="#cb218-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sqrt</span>(<span class="dv">10</span>))<span class="sc">^</span><span class="dv">2</span> <span class="sc">==</span> <span class="dv">20</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb218"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb218-1"><a href="#cb218-1" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sqrt</span>(<span class="dv">10</span>))<span class="sc">^</span><span class="dv">2</span> <span class="sc">==</span> <span class="dv">10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] FALSE</code></pre>
 </div>
@@ -7477,7 +7477,7 @@ Table&nbsp;3.2: Time symbols
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb776"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb776-1"><a href="#cb776-1" aria-hidden="true" tabindex="-1"></a>time_1 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb776-2"><a href="#cb776-2" aria-hidden="true" tabindex="-1"></a>time_1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-02-23 20:54:46 CET"</code></pre>
+<pre><code>[1] "2026-02-23 21:01:02 CET"</code></pre>
 </div>
 </div>
 <p>As you can see, time is stored using various components: the date (year - month - day), a space followed by the hour, minute and second, separated by a colon, a space and the time zone (CET). This format deviated from the ISO standard as it includes a space between the date and time component and it includes the name of the time zone but not the UTC offset.</p>
@@ -7500,18 +7500,18 @@ Table&nbsp;3.2: Time symbols
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb782"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb782-1"><a href="#cb782-1" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span><span class="fu">now</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-02-23 20:54:46 CET"</code></pre>
+<pre><code>[1] "2026-02-23 21:01:02 CET"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb784"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb784-1"><a href="#cb784-1" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span><span class="fu">now</span>(<span class="at">tzone =</span> <span class="st">"UTC"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-02-23 19:54:46 UTC"</code></pre>
+<pre><code>[1] "2026-02-23 20:01:02 UTC"</code></pre>
 </div>
 </div>
 <p>If you need to know the time in a different time zone, you can use {lubridate} <code>with_tz(time, tzone = " ")</code> function. For instance, finding the time in Australia/Brisbane for the local time is possible using</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb786"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb786-1"><a href="#cb786-1" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span><span class="fu">with_tz</span>(<span class="fu">Sys.time</span>(), <span class="at">tzone =</span> <span class="st">"Australia/Brisbane"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-02-24 05:54:46 AEST"</code></pre>
+<pre><code>[1] "2026-02-24 06:01:02 AEST"</code></pre>
 </div>
 </div>
 <p>If you replace <code>Sys.time()</code> with another time, the function shows the time in the tzone for that specific time.</p>
@@ -7775,7 +7775,7 @@ Table&nbsp;3.2: Time symbols
 <span id="cb854-2"><a href="#cb854-2" aria-hidden="true" tabindex="-1"></a>time1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-02-23 20:54:46 CET"</code></pre>
+<pre><code>[1] "2026-02-23 21:01:03 CET"</code></pre>
 </div>
 </div>
 <p>Here you have character with a date/time.</p>
@@ -8890,7 +8890,7 @@ Table&nbsp;3.2: Time symbols
 <span id="cb861-768"><a href="#cb861-768" aria-hidden="true" tabindex="-1"></a>If you test this condition in R:</span>
 <span id="cb861-769"><a href="#cb861-769" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb861-772"><a href="#cb861-772" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb861-773"><a href="#cb861-773" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sqrt</span>(<span class="dv">10</span>))<span class="sc">^</span><span class="dv">2</span> <span class="sc">==</span> <span class="dv">20</span></span>
+<span id="cb861-773"><a href="#cb861-773" aria-hidden="true" tabindex="-1"></a>(<span class="fu">sqrt</span>(<span class="dv">10</span>))<span class="sc">^</span><span class="dv">2</span> <span class="sc">==</span> <span class="dv">10</span></span>
 <span id="cb861-774"><a href="#cb861-774" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb861-775"><a href="#cb861-775" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb861-776"><a href="#cb861-776" aria-hidden="true" tabindex="-1"></a>The result is FALSE. Note that this is not always the case, for instance</span>
