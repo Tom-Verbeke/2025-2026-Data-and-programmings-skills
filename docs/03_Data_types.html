@@ -7477,7 +7477,7 @@ Table&nbsp;3.2: Time symbols
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb776"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb776-1"><a href="#cb776-1" aria-hidden="true" tabindex="-1"></a>time_1 <span class="ot">&lt;-</span> <span class="fu">Sys.time</span>()</span>
 <span id="cb776-2"><a href="#cb776-2" aria-hidden="true" tabindex="-1"></a>time_1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-02-23 20:49:13 CET"</code></pre>
+<pre><code>[1] "2026-02-23 20:54:46 CET"</code></pre>
 </div>
 </div>
 <p>As you can see, time is stored using various components: the date (year - month - day), a space followed by the hour, minute and second, separated by a colon, a space and the time zone (CET). This format deviated from the ISO standard as it includes a space between the date and time component and it includes the name of the time zone but not the UTC offset.</p>
@@ -7500,18 +7500,18 @@ Table&nbsp;3.2: Time symbols
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb782"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb782-1"><a href="#cb782-1" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span><span class="fu">now</span>()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-02-23 20:49:13 CET"</code></pre>
+<pre><code>[1] "2026-02-23 20:54:46 CET"</code></pre>
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb784"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb784-1"><a href="#cb784-1" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span><span class="fu">now</span>(<span class="at">tzone =</span> <span class="st">"UTC"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-02-23 19:49:13 UTC"</code></pre>
+<pre><code>[1] "2026-02-23 19:54:46 UTC"</code></pre>
 </div>
 </div>
 <p>If you need to know the time in a different time zone, you can use {lubridate} <code>with_tz(time, tzone = " ")</code> function. For instance, finding the time in Australia/Brisbane for the local time is possible using</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb786"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb786-1"><a href="#cb786-1" aria-hidden="true" tabindex="-1"></a>lubridate<span class="sc">::</span><span class="fu">with_tz</span>(<span class="fu">Sys.time</span>(), <span class="at">tzone =</span> <span class="st">"Australia/Brisbane"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-02-24 05:49:14 AEST"</code></pre>
+<pre><code>[1] "2026-02-24 05:54:46 AEST"</code></pre>
 </div>
 </div>
 <p>If you replace <code>Sys.time()</code> with another time, the function shows the time in the tzone for that specific time.</p>
@@ -7775,7 +7775,7 @@ Table&nbsp;3.2: Time symbols
 <span id="cb854-2"><a href="#cb854-2" aria-hidden="true" tabindex="-1"></a>time1</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2026-02-23 20:49:14 CET"</code></pre>
+<pre><code>[1] "2026-02-23 20:54:46 CET"</code></pre>
 </div>
 </div>
 <p>Here you have character with a date/time.</p>
